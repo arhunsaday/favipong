@@ -1,93 +1,95 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <title>FaviPong - Multiplayer Pong in Favicon</title>
-    <meta charset="utf-8">
+  <head>
+    <title>FaviPong</title>
+    <meta charset="utf-8" />
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 20px;
-            background: #222;
-            color: #fff;
-            text-align: center;
-        }
-        .container {
-            max-width: 600px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-        .status {
-            margin: 20px 0;
-            padding: 10px;
-            background: #333;
-            border-radius: 5px;
-        }
-        .controls {
-            margin: 20px 0;
-        }
-        button {
-            background: #4CAF50;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            margin: 5px;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 16px;
-        }
-        button:hover {
-            background: #45a049;
-        }
-        button:disabled {
-            background: #666;
-            cursor: not-allowed;
-        }
-        .game-info {
-            margin: 20px 0;
-            padding: 15px;
-            background: #444;
-            border-radius: 5px;
-        }
-        .score {
-            font-size: 24px;
-            font-weight: bold;
-            margin: 10px 0;
-        }
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 20px;
+        background: #222;
+        color: #fff;
+        text-align: center;
+      }
+      .container {
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 20px;
+      }
+      .status {
+        margin: 20px 0;
+        padding: 10px;
+        background: #333;
+        border-radius: 5px;
+      }
+      .controls {
+        margin: 20px 0;
+      }
+      button {
+        background: #4caf50;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        margin: 5px;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+      }
+      button:hover {
+        background: #45a049;
+      }
+      button:disabled {
+        background: #666;
+        cursor: not-allowed;
+      }
+      .game-info {
+        margin: 20px 0;
+        padding: 15px;
+        background: #444;
+        border-radius: 5px;
+      }
+      .score {
+        font-size: 24px;
+        font-weight: bold;
+        margin: 10px 0;
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <div class="container">
-        <h1>🏓 FaviPong</h1>
-        <p>Multiplayer Pong in your browser's favicon!</p>
+      <h1>🏓 FaviPong</h1>
+      <p>Multiplayer Pong in your browser's favicon!</p>
 
-        <div class="status">
-            <div id="connection-status">Connecting to server...</div>
-        </div>
+      <div class="status">
+        <div id="connection-status">Connecting to server...</div>
+      </div>
 
-        <div class="controls">
-            <button id="join-game" disabled>Join Game</button>
-            <button id="create-game" disabled>Create Game</button>
-            <button id="restart-game" style="display: none;">Play Again</button>
-        </div>
+      <div class="controls">
+        <button id="join-game" disabled>Join Game</button>
+        <button id="create-game" disabled>Create Game</button>
+      </div>
 
-        <div class="game-info">
-            <div id="game-status">Waiting for connection...</div>
-            <div class="score">
-                <span id="player1-score">0</span> - <span id="player2-score">0</span>
-            </div>
-            <div id="player-info"></div>
+      <div class="game-info">
+        <div id="game-status">Waiting for connection...</div>
+        <div class="score">
+          <span id="player1-score">0</span> - <span id="player2-score">0</span>
         </div>
+        <div id="player-info"></div>
+      </div>
 
-        <div style="margin-top: 30px;">
-            <h3>How to Play:</h3>
-            <p>Use <strong>W/S</strong> or <strong>↑/↓</strong> arrow keys to move your paddle</p>
-            <p>Watch the game in your browser's favicon!</p>
-            <p>First to 5 points wins!</p>
-        </div>
+      <div style="margin-top: 30px">
+        <h3>How to Play:</h3>
+        <p>
+          Use <strong>W/S</strong> or <strong>↑/↓</strong> arrow keys to move
+          your paddle
+        </p>
+        <p>Watch the game in your browser's favicon!</p>
+        <p>First to 5 points wins!</p>
+      </div>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
     <script src="favipong.js"></script>
-</body>
+  </body>
 </html>
