@@ -174,7 +174,7 @@ class PongGame {
 
     movePaddle(playerId, direction) {
         const player = this.players.get(playerId);
-        if (!player || !this.gameState.gameActive) return;
+        if (!player) return;
 
         const now = Date.now();
         if (now - player.lastPaddleMove < 50) return; // Rate limiting
@@ -226,12 +226,12 @@ class GameManager {
             throw new Error('Game not found');
         }
 
-        const playerId = Math.random().toString(36).substr(2, 9);
-        const isPlayer1 = game.addPlayer(ws, playerId);
-
-        if (isPlayer1 === false) {
+        if (game.players.size >= 2) {
             throw new Error('Game is full');
         }
+
+        const playerId = Math.random().toString(36).substr(2, 9);
+        const isPlayer1 = game.addPlayer(ws, playerId);
 
         this.playerToGame.set(ws, { gameId, playerId });
         return { gameId, playerId, isPlayer1 };
